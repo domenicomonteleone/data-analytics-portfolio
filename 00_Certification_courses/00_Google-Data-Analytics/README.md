@@ -17,8 +17,8 @@ To identify demand patterns and forecasting opportunities from historical sales 
 
 - `data/` → Raw and cleaned datasets  
 - `analysis/` → R scripts for data cleaning and exploration  
-- `reports/` → Final report (PDF or HTML from R Markdown)  
-- `images/` → Screenshots of dashboards/visualizations  
+- `images/` → Screenshots of dashboards/visualizations 
+- `docs/` → HTML from R Markdown  
 - `README.md` → Project documentation
 
 ---
@@ -94,8 +94,8 @@ Results shared in different formats:
 - 📊 **Tableau Dashboard** – Interactive exploration by month, category, warehouse  
 - 💻 **GitHub Repository** – Code and documentation
 
-🔗 [GitHub Repository](#)  
-🔗 [Tableau Dashboard](#)
+🔗 [GitHub Repository](https://github.com/domenicomonteleone/data-analytics-portfolio/tree/main/00_Certification_courses/00_Google-Data-Analytics)  
+🔗 [Tableau Dashboard](https://public.tableau.com/app/profile/domenico.monteleone/viz/Retaildemandforecast/Dashboard2)
 
 ---
 
