@@ -75,7 +75,7 @@ Cross-functional collaboration · Strategic thinking · International work exper
 ## 🔗 Connect with Me
 
 - [LinkedIn – Domenico Monteleone](https://www.linkedin.com/in/domenico-monteleone/)
-- [LinkedIn – Domenico Monteleone](https://domenicomonteleone.altervista.org/)
+- [Personal site – Domenico Monteleone](https://domenicomonteleone.altervista.org/)
 - [My YouTube Channel](https://www.youtube.com/@domenico.monteleone)
 - [GitHub Profile](https://github.com/domenicomonteleone/)
 
