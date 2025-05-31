@@ -94,8 +94,11 @@ Results shared in different formats:
 - 📊 **Tableau Dashboard** – Interactive exploration by month, category, warehouse  
 - 💻 **GitHub Repository** – Code and documentation
 
-🔗 [GitHub Repository](https://github.com/domenicomonteleone/data-analytics-portfolio/tree/main/00_Certification_courses/00_Google-Data-Analytics)  
+🔗 [R Markdown HTML Report](https://domenicomonteleone.github.io/data-analytics-portfolio/00-retail-demand-forecasting.html)
 🔗 [Tableau Dashboard](https://public.tableau.com/app/profile/domenico.monteleone/viz/Dashboard-retail-demand-forecast/Dashbordretaildemandforecast)
+🔗 [GitHub Repository](https://github.com/domenicomonteleone/data-analytics-portfolio/tree/main/00_Certification_courses/00_Google-Data-Analytics) 
+
+
 
 ---
 
