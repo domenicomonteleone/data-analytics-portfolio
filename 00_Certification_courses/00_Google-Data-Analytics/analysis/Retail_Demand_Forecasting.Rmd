@@ -8,22 +8,18 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
-library(knitr)
 library(dplyr)
 library(lubridate)
 library(ggplot2)
 library(scales)
 library(tidyr)
-library(DT)
-library(formattable)
-library(tidyverse)
 library(reactable)
 library(htmltools)
 ```
 📌 Project Introduction and Objective
 This project was developed as part of the Google Data Analytics Capstone and focuses on analyzing product demand in the retail sector.
 
-📈 An interactive version is available on Tableau Public:[https://public.tableau.com/app/profile/domenico.monteleone/viz/Retaildemandforecast/Dashboard2]
+📈 An interactive version is available on Tableau Public:[https://public.tableau.com/app/profile/domenico.monteleone/viz/Dashboard-retail-demand-forecast/Dashbordretaildemandforecast]
 
 **Objective:**
 Analyze historical order data to identify trends, seasonality, and provide strategic insights for forecasting future demand.

@@ -1,14 +1,10 @@
 ## ----setup, include=FALSE---------------------------------------------------------------------------------------------------
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
-library(knitr)
 library(dplyr)
 library(lubridate)
 library(ggplot2)
 library(scales)
 library(tidyr)
-library(DT)
-library(formattable)
-library(tidyverse)
 library(reactable)
 library(htmltools)
 
