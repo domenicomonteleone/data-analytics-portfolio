@@ -95,7 +95,7 @@ Results shared in different formats:
 - 💻 **GitHub Repository** – Code and documentation
 
 🔗 [GitHub Repository](https://github.com/domenicomonteleone/data-analytics-portfolio/tree/main/00_Certification_courses/00_Google-Data-Analytics)  
-🔗 [Tableau Dashboard](https://public.tableau.com/app/profile/domenico.monteleone/viz/Retaildemandforecast/Dashboard2)
+🔗 [Tableau Dashboard](https://public.tableau.com/app/profile/domenico.monteleone/viz/Dashboard-retail-demand-forecast/Dashbordretaildemandforecast)
 
 ---
 

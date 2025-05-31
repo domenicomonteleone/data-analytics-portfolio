@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio GitHub di Domenico Monteleone - Progetti di Data Analytics, Supply Chain e Business Intelligence">
+    <title>Domenico Monteleone - GitHub Projects Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"></noscript>
+    <style>
+        :root {
+            --primary-color: #64b5f6;
+            --secondary-color: #42a5f5;
+            --accent-color: #1976d2;
+            --bg-dark: #1a1a1a;
+            --bg-card: rgba(40, 40, 40, 0.9);
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888;
+            --border-color: rgba(80, 80, 80, 0.3);
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+            --border-radius: 20px;
+            --border-radius-sm: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(100, 181, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(66, 165, 245, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(100, 181, 246, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .user-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .user-title i {
+            color: var(--primary-color);
+            filter: drop-shadow(0 0 10px rgba(100, 181, 246, 0.5));
+            animation: pulse 2s infinite;
+        }
+
+        .tagline {
+            margin-bottom: 20px;
+        }
+
+        .keywords {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .main-title {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            background: rgba(100, 181, 246, 0.1);
+            border: 1px solid rgba(100, 181, 246, 0.2);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb a:hover {
+            background: rgba(100, 181, 246, 0.2);
+            border-color: rgba(100, 181, 246, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 181, 246, 0.3);
+        }
+
+        /* Navigation */
+        .nav-sections {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 2px solid rgba(100, 181, 246, 0.3);
+            border-radius: 25px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn:hover, 
+        .nav-btn.active {
+            background: rgba(100, 181, 246, 0.2);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            display: none;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-align: center;
+            margin-top: -38px;
+            margin-bottom: 30px;
+        }
+
+        /* Course/Project Cards */
+        .course-link {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: left 0.4s ease;
+        }
+
+        .course-link:hover::before {
+            left: 0;
+        }
+
+        .course-link:hover {
+            border-color: var(--primary-color);
+            background: rgba(100, 181, 246, 0.1);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .course-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .course-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .course-meta a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .course-meta a:hover {
+            color: var(--primary-color);
+        }
+
+        .course-meta a:hover .hover-icon {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .hover-icon {
+            transition: var(--transition);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .footer-info {
+            color: var(--text-muted);
+        }
+
+        .footer-info p {
+            margin-bottom: 8px;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            background: rgba(100, 181, 246, 0.2);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .user-title {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .breadcrumb {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-sections {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-meta {
+                gap: 15px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 10px;
+            }
+
+            .social-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        /* Performance optimizations */
+        .course-link,
+        .nav-btn,
+        .social-link {
+            will-change: transform;
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus states for accessibility */
+        .nav-btn:focus,
+        .course-link:focus,
+        .social-link:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+		
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="user-title">
+                    <i class="fab fa-github" aria-hidden="true"></i> 
+                    Domenico Monteleone
+                </h1>
+                
+                <div class="tagline">
+                    <span class="keywords">Analysis | Innovation | Optimization | Creativity</span>
+                </div>
+                
+                <h2 class="main-title">GitHub Portfolio Structure</h2>
+                
+                <p>Real-world and course-based projects focused on generating <strong>business insights</strong> and supporting <strong>data-driven decisions</strong>.</p>
+                
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="https://domenicomonteleone.altervista.org" rel="home">
+                        <i class="fas fa-home" aria-hidden="true"></i> Portfolio
+                    </a>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    <span aria-current="page">GitHub Projects</span>
+                </nav>
+            </div>
+        </header>
+
+        <nav class="nav-sections" role="navigation" aria-label="Project categories">
+            <button class="nav-btn active" data-section="certification-courses" type="button">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i> Certification-Courses
+            </button>
+            <button class="nav-btn" data-section="personal-projects" type="button">
+                <i class="fas fa-user-cog" aria-hidden="true"></i> Personal-Projects
+            </button>
+            <button class="nav-btn" data-section="technology-based" type="button">
+                <i class="fas fa-flask" aria-hidden="true"></i> Technology-Based
+            </button>
+            <button class="nav-btn" data-section="dashboards-interactive" type="button">
+                <i class="fas fa-chart-pie" aria-hidden="true"></i> Dashboards-Interactive
+            </button>
+            <button class="nav-btn" data-section="resources-templates" type="button">
+                <i class="fas fa-rocket" aria-hidden="true"></i> Resources-Templates
+            </button>
+        </nav>
+
+        <main>
+            <!-- Certification Courses Section -->
+            <section id="certification-courses" class="section active">
+                <h2 class="section-title">Certification-Courses</h2>
+                <h3 class="section-subtitle">Projects from professional courses</h3>
+                
+                <div class="courses-list">
+                    <article class="course-link">
+                        <h3 class="course-title">Google-Data-Analytics</h3>
+                        <p class="course-description">
+                            This is my capstone project for <strong>Google's Data Analytics Professional Certificate</strong>. 
+                            Presented in the final course, it applies the entire data analysis process to a real-world case study 
+                            using the <strong>6-Phase Analysis Methodology</strong>: 
+                            <strong>Ask → Prepare → Process → Analyze → Share → Act</strong>.<br><br>
+                            <strong>Explore the complete project through the links below</strong> to view the detailed project report, 
+                            examine the code and methodology in the repository, and verify the professional certification.
+                        </p>
+                        <div class="course-meta">
+                            <a href="https://domenicomonteleone.github.io/data-analytics-portfolio/00_Certification_courses/00_Google-Data-Analytics/retail-demand-forecasting.html" 
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-chart-line hover-icon" aria-hidden="true"></i> Project Report
+                            </a>
+                            <a href="https://github.com/domenicomonteleone/data-analytics-portfolio/tree/main/00_Certification_courses/00_Google-Data-Analytics" 
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github hover-icon" aria-hidden="true"></i> Repository
+                            </a>
+                            <a href="https://www.coursera.org/professional-certificates/google-data-analytics" 
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-certificate hover-icon" aria-hidden="true"></i> Certificate
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Personal Projects Section -->
+            <section id="personal-projects" class="section">
+                <h2 class="section-title">Personal-Projects</h2>
+                <h3 class="section-subtitle">Independent research and development</h3>
+                <div class="courses-list">
+                    <article class="course-link">
+                        <h3 class="course-title">Coming Soon</h3>
+                        <p class="course-description">Personal projects section is under development. Check back soon for innovative solutions and independent research projects.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> In Development</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Technology Based Section -->
+            <section id="technology-based" class="section">
+                <h2 class="section-title">Technology-Based</h2>
+                <h3 class="section-subtitle">Technology-focused experiments and implementations</h3>
+                <div class="courses-list">
+                    <article class="course-link">
+                        <h3 class="course-title">Coming Soon</h3>
+                        <p class="course-description">Technology-based projects section is under development. Expect cutting-edge implementations and technical experiments.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> In Development</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Dashboards Interactive Section -->
+            <section id="dashboards-interactive" class="section">
+                <h2 class="section-title">Dashboards-Interactive</h2>
+                <h3 class="section-subtitle">Interactive visualizations and business intelligence</h3>
+                <div class="courses-list">
+                    <article class="course-link">
+                        <h3 class="course-title">Coming Soon</h3>
+                        <p class="course-description">Interactive dashboards section is under development. Prepare for dynamic visualizations and real-time analytics.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> In Development</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Resources Templates Section -->
+            <section id="resources-templates" class="section">
+                <h2 class="section-title">Resources-Templates</h2>
+                <h3 class="section-subtitle">Reusable templates and utilities</h3>
+                <div class="courses-list">
+                    <article class="course-link">
+                        <h3 class="course-title">Coming Soon</h3>
+                        <p class="course-description">Resources and templates section is under development. Look forward to reusable components and productivity tools.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> In Development</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <section class="stats-section">
+            <h2 style="color: var(--primary-color); margin-bottom: 20px;">Repository Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalRepos">1</span>
+                    <div class="stat-label">Total Repositories</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalStars">15</span>
+                    <div class="stat-label">Stars Received</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalForks">5</span>
+                    <div class="stat-label">Forks</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="languages">3</span>
+                    <div class="stat-label">Languages</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; <span id="currentYear">2024</span> <a href="https://domenicomonteleone.altervista.org">Domenico Monteleone</a></p>
+                    <p>Supply Chain Optimization Analyst</p>
+                </div>
+                
+                <div class="social-links">
+                    <h4>Contacts & Social</h4>
+                    <div class="social-grid">
+                        <a href="https://domenicomonteleone.altervista.org" class="social-link">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                            <span>Portfolio</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/domenicomonteleone/" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/domenicomonteleone" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.youtube.com/@domenico.monteleone" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span>Youtube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            ANIMATION_DELAY: 100,
+            COUNTER_DURATION: 1500,
+            SECTION_TRANSITION: 600
+        };
+
+        // Navigation Management
+        class NavigationManager {
+            constructor() {
+                this.navButtons = document.querySelectorAll('.nav-btn');
+                this.sections = document.querySelectorAll('.section');
+                this.init();
+            }
+
+            init() {
+                this.navButtons.forEach(btn => {
+                    btn.addEventListener('click', this.handleNavClick.bind(this));
+                });
+            }
+
+            handleNavClick(e) {
+                const targetSection = e.currentTarget.getAttribute('data-section');
+                this.showSection(targetSection, e.currentTarget);
+            }
+
+            showSection(targetId, activeBtn) {
+                // Update button states
+                this.navButtons.forEach(btn => btn.classList.remove('active'));
+                activeBtn.classList.add('active');
+
+                // Update section visibility
+                this.sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetId) {
+                        setTimeout(() => section.classList.add('active'), 50);
+                    }
+                });
+            }
+        }
+
+        // Statistics Counter
+        class StatsCounter {
+            constructor() {
+                this.stats = {
+                    totalRepos: 1,
+                    totalStars: 15,
+                    totalForks: 5,
+                    languages: 3
+                };
+            }
+
+            animateCounter(elementId, targetValue) {
+                const element = document.getElementById(elementId);
+                if (!element) return;
+
+                let currentValue = 0;
+                const increment = targetValue / (CONFIG.COUNTER_DURATION / 50);
+                
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= targetValue) {
+                        element.textContent = targetValue;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(currentValue);
+                    }
+                }, 50);
+            }
+
+            init() {
+                Object.entries(this.stats).forEach(([key, value]) => {
+                    this.animateCounter(key, value);
+                });
+            }
+        }
+
+        // Utility Functions
+        const Utils = {
+            updateYear() {
+                const now = new Date();
+                const currentYear = now.getFullYear();
+                const baseYear = 2024;
+                
+                const yearText = currentYear > baseYear 
+                    ? `${baseYear}-${currentYear}` 
+                    : `${baseYear}`;
+                
+                const yearElement = document.getElementById('currentYear');
+                if (yearElement) {
+                    yearElement.textContent = yearText;
+                }
+            },
+
+            addLoadingAnimation() {
+                const cards = document.querySelectorAll('.course-link');
+                cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    
+                    setTimeout(() => {
+                        card.style.transition = `all ${CONFIG.SECTION_TRANSITION}ms ease`;
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * CONFIG.ANIMATION_DELAY);
+                });
+            },
+
+            // Performance optimization: Throttle scroll events
+            throttle(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        };
+
+        // Application Initialization
+        class App {
+            constructor() {
+                this.navigationManager = null;
+                this.statsCounter = null;
+            }
+
+            init() {
+                // Wait for DOM to be fully loaded
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', this.bootstrap.bind(this));
+                } else {
+                    this.bootstrap();
+                }
+            }
+
+            bootstrap() {
+                try {
+                    // Initialize components
+                    this.navigationManager = new NavigationManager();
+                    this.statsCounter = new StatsCounter();
+
+                    // Run initialization tasks
+                    Utils.updateYear();
+                    
+                    // Delay animations slightly for better perceived performance
+                    setTimeout(() => {
+                        this.statsCounter.init();
+                        Utils.addLoadingAnimation();
+                    }, 300);
+                } catch (error) {
+                    console.error('Application initialization failed:', error);
+                }
+            }
+        }
+
+        // Initialize the application
+        const app = new App();
+        app.init();
+    </script>
+</body>
+</html>
