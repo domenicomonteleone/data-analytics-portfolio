@@ -9,9 +9,10 @@
     <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"></noscript>
     <style>
         :root {
-            --primary-color: #64b5f6;
-            --secondary-color: #42a5f5;
-            --accent-color: #1976d2;
+            
+             --primary-color: #FFD700;       /* giallo oro */
+  --secondary-color: #C3B6F5;     /* slate blue (complementare) */
+  --accent-color: #FFA500;        /* arancione scuro (analogo) */
             --bg-dark: #1a1a1a;
             --bg-card: rgba(40, 40, 40, 0.9);
             --text-primary: #e0e0e0;
@@ -137,23 +138,23 @@
         }
 
         .breadcrumb a {
-            color: var(--primary-color);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 25px;
-            background: rgba(100, 181, 246, 0.1);
-            border: 1px solid rgba(100, 181, 246, 0.2);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background: rgba(255, 165, 0, 0.1); /* arancione chiaro */
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-        .breadcrumb a:hover {
-            background: rgba(100, 181, 246, 0.2);
-            border-color: rgba(100, 181, 246, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(100, 181, 246, 0.3);
+.breadcrumb a:hover {
+    background: rgba(255, 127, 80, 0.2);     /* coral */
+    border-color: rgba(255, 127, 80, 0.4);   /* coral più visibile */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 127, 80, 0.3);
         }
 
         /* Navigation */
